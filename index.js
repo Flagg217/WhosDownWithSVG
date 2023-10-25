@@ -1,6 +1,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const { Svg } = require('.lib/shapes');
+const { Svg } = require('./lib/shapes');
 
 const questions = [{
     type: 'list',
