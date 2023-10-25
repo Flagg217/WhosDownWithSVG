@@ -28,4 +28,16 @@ const questions = [{
         message: 'What text color would you like to use?',
 }];
 
+function writeToFile(fileName, data) {
+    fs.writeFileSync('./examples/' + fileName, data);
+}
+
+function init() {
+    inquirer.createPrompt(questions).then(({ shape, bgColor, text, textColor }) => {
+        const svg = new Svg(shape, bgColor, text, textColor).render();
+        writeToFile('shape.svg', svg);
+    });
+}
+
+init();
 
