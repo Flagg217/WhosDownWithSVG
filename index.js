@@ -1,6 +1,6 @@
-import inquirer from 'inquirer';
+const inquirer = require('inquirer');
 const fs = require('fs');
-const { Svg } = require('./lib/shapes.js').default;
+const { Svg } = require('./lib/svg.js');
 
 const questions = [{
     type: 'list',

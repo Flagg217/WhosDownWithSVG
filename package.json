@@ -1,7 +1,6 @@
 {
   "name": "whosdownwithsvg",
   "version": "1.0.0",
-  "type": "module",
   "description": "SVG Logo Maker",
   "main": "index.js",
   "directories": {
