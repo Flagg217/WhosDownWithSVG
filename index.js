@@ -1,6 +1,6 @@
+import inquirer from 'inquirer';
 const fs = require('fs');
-import inquirer from './inquirer.mjs';
-const { Svg } = require('./lib/shapes');
+const { Svg } = require('./lib/shapes.js').default;
 
 const questions = [{
     type: 'list',
@@ -17,20 +17,25 @@ const questions = [{
     name: 'text',
     message: 'What text would you like to use? (Three letters maximum)',
 },  {
-        type: 'input',
-        name: 'textColor',
-        message: 'What text color would you like to use?',
+    type: 'input',  
+    name: 'textColor',
+    message: 'What text color would you like to use?',
 }];
 
 function writeToFile(fileName, data) {
-    fs.writeFileSync('./examples/' + fileName, data);
+    fs.writeFile(fileName, data, (err) => {
+        if (err) throw err;
+        console.log('The file has been saved!');
+    });
 }
 
 function init() {
-    inquirer.createPrompt(questions).then(({ shape, bgColor, text, textColor }) => {
-        const svg = new Svg(shape, bgColor, text, textColor).render();
-        writeToFile('shape.svg', svg);
+    inquirer.prompt(questions).then((answers) => {
+        const svg = new Svg(answers.shape, answers.bgColor, answers.text, answers.textColor);
+        writeToFile('index.html', svg.render());
     });
+
+
 }
 
 init();
