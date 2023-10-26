@@ -59,4 +59,4 @@ Opening the `logo.svg` file in a browser will show a 300x200 pixel image of a pu
 
 - [GitHub Repository](https://github.com/Flagg217/WhosDownWithSVG.git) 
 
-- [Video Walkthrough]()
+- [Video Walkthrough](https://drive.google.com/file/d/1kogrn_msR7Op_Hq9MPzIomzn9bPYGec7/view)
