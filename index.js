@@ -1,6 +1,8 @@
+
 const inquirer = require('inquirer');
 const fs = require('fs');
-const { Svg } = require('./lib/svg.js');
+import shapes from './lib/shapes.js';
+const { Circle, Square, Triangle } = shapes.default;
 
 const questions = [{
     type: 'list',
